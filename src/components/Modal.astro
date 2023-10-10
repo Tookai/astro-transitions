@@ -1,0 +1,27 @@
+---
+interface Props {
+	item: {
+		id: string
+		imageUrl: string
+		description: string
+	}
+}
+
+const { item } = Astro.props
+---
+
+<a
+	href={"/"}
+	class="absolute top-0 left-0 right-0 bottom-0 bg-slate-950/70 flex justify-center items-center z-40"
+>
+	<div
+		class="max-w-[800px] max-h-[600px] relative overflow-hidden rounded-lg shadow-xl z-50 flex justify-center items-center"
+		transition:name={`image-${item.id}`}
+	>
+		<img
+			class="h-auto max-w-full rounded-lg"
+			src={item.imageUrl}
+			alt={item.description}
+		/>
+	</div>
+</a>

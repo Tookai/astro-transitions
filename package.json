@@ -1,17 +1,23 @@
 {
-  "name": "astro-transitions",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/tailwind": "^5.0.2",
-    "astro": "^3.2.4",
-    "tailwindcss": "^3.0.24"
-  }
+	"name": "astro-transitions",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/tailwind": "^5.0.2",
+		"astro": "^3.2.4",
+		"tailwindcss": "^3.0.24"
+	},
+	"devDependencies": {
+		"eslint": "^8.51.0",
+		"eslint-config-prettier": "^9.0.0",
+		"prettier": "^3.0.3",
+		"prettier-plugin-astro": "^0.12.0"
+	}
 }

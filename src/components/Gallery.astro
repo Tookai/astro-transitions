@@ -1,0 +1,40 @@
+---
+import { data } from "../data/data"
+
+interface Props {
+	id?: string
+}
+
+const { id } = Astro.props
+
+// make sub array of 3 items
+const subArray = (arr: any[], size: number) => {
+	const subArr = []
+	for (let i = 0; i < arr.length; i += size) {
+		subArr.push(arr.slice(i, i + size))
+	}
+	return subArr
+}
+---
+
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+	{
+		subArray(data, 3).map((arr) => (
+			<div class="grid gap-4">
+				{arr
+					.filter((i) => i.id !== id)
+					.map((item) => (
+						<a href={`/${item.id}`}>
+							<div transition:name={`image-${item.id}`}>
+								<img
+									class="h-auto max-w-full rounded-lg"
+									src={item.imageUrl}
+									alt={item.description}
+								/>
+							</div>
+						</a>
+					))}
+			</div>
+		))
+	}
+</div>
